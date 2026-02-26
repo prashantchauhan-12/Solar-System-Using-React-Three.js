@@ -74,11 +74,14 @@ const InfoPanel = ({ planet, onClose }) => {
         zIndex: 100
     }}>
         <div style={{
-            background: "rgba(0,0,0,0.7)",
+            background: "rgba(0, 20, 0, 0.8)",
             padding: "20px",
             borderRadius: "10px",
-            color: "white",
+            color: "#00ff00",
+            fontFamily: "'Courier New', Courier, monospace",
             width: "300px",
+            border: "1px solid #00ff00",
+            boxShadow: "0 0 10px rgba(0, 255, 0, 0.2)"
         }}>
             <div style={{
                 display: "flex",
@@ -90,17 +93,17 @@ const InfoPanel = ({ planet, onClose }) => {
                 <button onClick={onClose} style={{
                     background: "transparent",
                     border: "none",
-                    color: "white",
+                    color: "#00ff00",
                     fontSize: "20px",
                     cursor: "pointer",
-                }}>X</button>
+                }}>[X]</button>
             </div>
             <p>{info[planet].description}</p>
             <p><strong>Radius:</strong> {info[planet].radius}</p>
             <p><strong>Distance:</strong> {info[planet].distance}</p>
             <p><strong>Speed:</strong> {info[planet].speed}</p>
         </div>
-    </div>
+    </div >
 
 }
 

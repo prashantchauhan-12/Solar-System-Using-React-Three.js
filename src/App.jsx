@@ -10,32 +10,11 @@ import SaturnGroup from "./components/SaturnGroup";
 import InfoPanel from "./components/InfoPanel";
 
 const OrbitLine = ({ distance }) => {
-  const points = useMemo(() => {
-    const pts = [];
-    for (let i = 0; i <= 64; i++) {
-      const angle = (i / 64) * Math.PI * 2;
-      pts.push(new THREE.Vector3(Math.cos(angle) * distance, 0, Math.sin(angle) * distance));
-    }
-    return pts;
-  }, [distance]);
-
-  const lineGeometry = useMemo(() => {
-    const geo = new THREE.BufferGeometry().setFromPoints(points);
-    // Needed for dashed lines to render dashes based on total length
-    geo.computeLineDistances();
-    return geo;
-  }, [points]);
-
   return (
-    <line geometry={lineGeometry}>
-      <lineDashedMaterial
-        color="#ffffff"
-        transparent
-        opacity={0.3}
-        dashSize={0.5}
-        gapSize={0.5}
-      />
-    </line>
+    <mesh rotation={[-Math.PI / 2, 0, 0]}>
+      <ringGeometry args={[distance - 0.05, distance + 0.05, 64]} />
+      <meshBasicMaterial color="#ffffff" transparent opacity={0.08} side={THREE.DoubleSide} />
+    </mesh>
   );
 };
 

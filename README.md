@@ -2,6 +2,8 @@
 
 A beautiful, interactive 3D solar system simulation built with React, Three.js, and React Three Fiber.
 
+![Solar System Simulation](image.png)
+
 ## Features Currently Implemented
 - **3D Solar System:** Rendered with true-to-life planetary textures using `@react-three/fiber`.
 - **Dynamic Physics:** Planets orbit the Sun and rotate on their axes at scaled speeds.
